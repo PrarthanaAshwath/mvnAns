@@ -1,4 +1,4 @@
--- 
+---
 - name: Deploy To Tomcat
   hosts: web
   become: yes
@@ -8,10 +8,11 @@
         src: "/var/snap/jenkins/4865/workspace/mvnAns/target/mvnAns.war"
         dest: "/opt/tomcat/webapps/mvnAns.war"
         remote_src: no
+        
     - name: Stop Tomcat
       shell: /opt/tomcat/bin/shutdown.sh
       ignore_errors: yes
       become: yes
+      
     - name: Start Tomcat
       shell: /opt/tomcat/bin/startup.sh
-      become: yes
