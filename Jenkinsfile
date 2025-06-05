@@ -23,7 +23,6 @@ pipeline
 		stage('Deploy'){
 			steps{
 				sh 'ansible-playbook -i ansible/hosts.ini ansible/deploy.yml'
-				
 			}
 		}
 		
